@@ -15,14 +15,6 @@
       <img src="https://img.shields.io/badge/CodePen-black?style=for-the-badge&logo=codepen" alt="Codepen Badge"/>
     </a>
   </div>
-  <h1>
-    Hello world!
-    <img src="https://media.giphy.com/media/el8UZ13JzUMkvTshNR/giphy.gif" width="50px"/>
-  </h1>
-
-  <div align="center">
-    <img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif?cid=790b76114a68ce71fwhqk20uc4hn91wuu5s52nvh8z0fumdi&ep=v1_gifs_search&rid=giphy.gif&ct=g" width="480" height="270"/>
-  </div>
 </div>
 
 ### :man_technologist: About Me :
