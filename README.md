@@ -32,6 +32,8 @@ I am a Full Stack Developer <img src="https://media.giphy.com/media/WUlplcMpOCEm
 
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=fedorrychkov&layout=compact&theme=vision-friendly-dark)](https://github.com/anuraghazra/github-readme-stats)
 
+![](https://leetcard.jacoblin.cool/fedorrychkov)
+
 <!--
 **Fedorrychkov/fedorrychkov** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
