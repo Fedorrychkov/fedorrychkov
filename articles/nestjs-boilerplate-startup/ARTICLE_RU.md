@@ -133,7 +133,7 @@ sessions.json
 
 Жмакайте на Get Started, приступим к созданию проекта. На 1 экране создания у вас попросят ввести название, я назову свой так: nestjs-boilerplate-example. Это название будет участвовать в будущих настройках env файлов проекта. Далее на 2 экране мне предлагают включить аналитику, мне она не нужна, я отказываюсь и создаю проект. После успешного создания у вас появится проект на дашборде + вы можете перейти к нему нажав на Continue в окне ожидания создания проекта.
 
-В дашборде созданного проекта Вы увидите что-то наподобии этого.
+В дашборде созданного проекта Вы увидите что-то наподобие этого.
 
 ![Firebase Project Console](./images/firebase_project_console.png?raw=true "Firebase Project Console")
 
@@ -421,7 +421,7 @@ export { getUniqueId }
 Для дат, в firestore есть подходящая модель Timestamp, с ней достаточно легко работать и фильтровать по ней документы. В качестве id документа будем использовать uuid/v4 утилиту.
 
 ```
-// entities/example.document.ts
+// example/entities/example.document.ts
 import { Timestamp } from '@google-cloud/firestore'
 
 export class ExampleDocument {
@@ -434,9 +434,7 @@ export class ExampleDocument {
   createdAt?: Timestamp | null
   updatedAt?: Timestamp | null
 }
-```
 
-```
 // example/dto/example.filter.ts
 export class ExampleFilter {
   public isPublished?: boolean
@@ -691,7 +689,7 @@ export class ExampleRepository {
 }
 ```
 
-Само собой в файле example/index.ts организуем реэкспорт модуля и документа
+Само собой в файле example/index.ts организуем реэкспорт модуля и документа.
 ```
 // example/index.ts
 export * from './entities'
@@ -729,7 +727,7 @@ import { ExampleModule } from './modules/example'
 export class AppModule {}
 ```
 
-Кажется мы забыли еще кое-что. Работа с firebase без конфиг файлов firebase не совсем удобна, особенно если речь идет о различных контурах. Нужно будет добавить глобально firebase cli ```npm install -g firebase-tools```. После этого, скорее всего вам потребуется авторизоваться командой ```firebase login```. Как только вы пройдете все требуемые шаги, приступим к конфигурации работы с firebase из терминала.
+Кажется мы забыли еще кое-что. Работа с firebase без конфиг файлов firebase не совсем удобна, особенно если речь идет о различных контурах. Нужно будет добавить глобально firebase cli ```npm install -g firebase-tools```. После этого, скорее всего вам потребуется авторизоваться командой ```firebase login```. Как только вы пройдете все требуемые шаги, можем приступить к конфигурации работы с firebase из терминала.
 
 В терминале, в корне вашего проекта, потребуется ввести команду ```firebase init```. Эта команда запустит процесс инициализации нового или созданного ранее проекта Firebase. Выберите, в моем случае, Firestore из предлагаемых пунктов. Далее, если вы как и я, уже создали firebse проект, выберите пункт ```Use an existing project```, найдите в предложенном списке ваш проект и выберите его. Продолжайте настройку, обычно далее ничего лишнего не нужно менять, дефолтные названия файлов можем оставить как есть.
 
@@ -803,12 +801,12 @@ console.log(husky())
 
 Этот скрипт нужен для избежания ошибки установки husky, после команды установки зависимостей ```npm i/pnpm i```
 
-Еще, нам нужно отредактировать файл .husky/pre-commit
+Еще, нам нужно будет отредактировать файл .husky/pre-commit
 ```
 pnpm run lint-staged && pnpm run lint:fix
 ```
 
-Так как подразумевается запуск хука, который будет проверять файлы, нужно дополнительно установить пакет ```pnpm add -D lint-stagged``` и добавить в package.json дополнительный конфиг.
+Так как подразумевается запуск хука, который будет проверять файлы, нужно дополнительно установить пакет ```pnpm add -D lint-staged``` и добавить в package.json дополнительный конфиг.
 
 ```
 ...
@@ -824,8 +822,8 @@ pnpm run lint-staged && pnpm run lint:fix
 ...
 ```
 
-По итогу у нас соберется [такой коммит](https://github.com/Fedorrychkov/nestjs-startup-boilerplate/commit/534ed4df51f77229ae7b93b35c45dee507be743e)
-Теперь, все будущие коммиты будут валидироватьcя по js(x)/ts(x) файлам на основе eslint/prettier и добавлять правки для будущего коммита при помощи команды ```lint:fix```. Можно расценивать данный пример прекоммит хука, как основу для ваших личных конфигураций.
+По итогу у нас соберется [такой коммит](https://github.com/Fedorrychkov/nestjs-startup-boilerplate/commit/534ed4df51f77229ae7b93b35c45dee507be743e).
+Теперь, все будущие коммиты будут валидироватьcя по js(x)/ts(x) файлам на основе eslint/prettier и добавлять правки для будущего коммита при помощи команды, добавленной ранее ```lint:fix```. Можно расценивать данный пример прекоммит хука, как основу для ваших личных конфигураций.
 Полный набор доступных гит хуков можно посмотреть в [githooks](https://git-scm.com/docs/githooks)
 
 ## Потестируем и соберем индексы для api/example
@@ -842,11 +840,11 @@ pnpm run lint-staged && pnpm run lint:fix
 
 В результате мы получим ожидаемую ошибку 404, об отсутствующих документах. (Это поведение изначально заложено в коде контроллера, конфигурировать можно как вам вздумается)
 
-А теперь, давайте запросим список example с фильтром в query параметрах ?isPublished=false
+А теперь, давайте запросим список example с фильтром в query параметрах ?isPublished=<false или true>.
 
-![Postman Example List Get Route With Wrong Filter](./images/postman_unpublished_example_list.png?raw=true "Postman Example List Get Route With Wrong Filter")
+![Postman Example List Get Route With Wrong Filter](./images/postman_wrong_boolean_filter_example.png?raw=true "Postman Example List Get Route With Wrong Filter")
 
-Так, мы послали запрос с параметром, однако получаем ту же ошибку. На самом деле это нормально, но есть проблема. На данный момент, наше апи не умеет читать и работает с boolean значения, они отображаются в контроллерах и сервисах, как строковые значения 'true' | 'false'.
+Так, мы послали запрос с параметром, однако получаем ту же ошибку. На самом деле это нормально, но есть проблема. На данный момент, наше апи не умеет читать и работает с boolean значениями, они отображаются в контроллерах и сервисах, как строковые значения 'true' | 'false'.
 Если залогировать входящий аргумент query в контроллере GET v1/example, то мы увидим следующую картину
 ```
 { isPublished: 'false' }
@@ -887,11 +885,11 @@ import {
 
 Таким образом, трансформируем входящий параметр isPublished в boolean значение.
 
-### Создание нового example документа.
+### Создание нового example документа
 
 ![Postman Example Create](./images/postman_example_create.png?raw=true "Postman Example Create")
 
-Я создал несколько документов, для примера. Давайте еще раз запросим наш списке, с фильтром по isPublished=false
+Я создал несколько документов, для примера. Давайте еще раз запросим наш список, с фильтром по isPublished=false
 
 
 ![Postman Example Unpublished list](./images/postman_unpublished_example_list.png?raw=true "Postman Example Unpublished list")
@@ -951,7 +949,7 @@ import {
 
 После редактирования файла, смело запускайте команду деплоя ```firebase deploy --only firestore:indexes```
 
-После запуска, в той же консоле фаербейза, во вкладке indexes вы увидите свой индекс, со статусом Building..., необходимо дождаться его сборки и вновь сделать запрос за списокм.
+После запуска, в той же консоле фаербейза, во вкладке indexes вы увидите свой индекс, со статусом Building..., необходимо дождаться его сборки и вновь сделать запрос за списком.
 
 ### Получение Example по ID
 Теперь мы можем проверить метод получения example документа по id, скрин вставлять не буду, так как этот запрос уже должен работать без проблем. В моем случае, это ```http://localhost:8080/v1/example/7c8a5d30-beca-409a-8509-873616c80f5a```, Ваш ID может отличаться от моего.
@@ -961,20 +959,18 @@ import {
 
 ![Postman edit example](./images/postman_edit_title_example.png?raw=true "Postman edit example")
 
-Если снова запросить список или документ по id, мы так же увидим измененные данные
+Если снова запросить список или документ по id, мы так же увидим измененные данные.
 
 ### Смена флага isPublished
-Помимо этого, давайте поменяем значение isPublished в документе, сделав запрос на еще один endpoint
+Помимо этого, давайте поменяем значение isPublished в документе, сделав запрос на еще один endpoint.
 
-![Postman toggle publis example](./images/postman_edit_title_example.png?raw=true "Postman toggle publis example")
+![Postman toggle publis example](./images/postman_toggle_publis.png?raw=true "Postman toggle publis example")
 
 Если вы проверите состояние списка isPublished=false или true, то увидите изменения в возвращаемых данных.
 
-Так же прикрепляю ссылку на текущий набор api вызовов в Postman [json файлик](./common/postman_example.json). Можете скачать его и импортировать в свой workspace в Postman для быстрой развертки окружения запросов.
+Так же прикрепляю ссылку на текущий набор api вызовов в Postman [json файлик](./common/postman_example.json). Можете скачать его и импортировать в свой Postman workspace для быстрой развертки окружения запросов.
 
-Очередной [коммит](https://github.com/Fedorrychkov/nestjs-startup-boilerplate/commit/81e8040835da547f5f6a2367f51f5104f1ee64f4) с изменениями.
-
-На данном этапе я мог бы остановиться, но мы еще не разобрали момент с публикацией файлов в GCloud Storage...
+Очередной [коммит](https://github.com/Fedorrychkov/nestjs-startup-boilerplate/commit/81e8040835da547f5f6a2367f51f5104f1ee64f4) с изменениями. На данном этапе я мог бы остановиться, но мы еще не разобрали момент с публикацией файлов в GCloud Storage...
 
 ## Storage Bucket
 
@@ -1009,9 +1005,7 @@ src/providers
     utils.ts
 ```
 
-Давайте опишем каждый файл, кода будет относительно немного, после добавим загрузку и удаление в отдельный ednpoint работы с изображением через api/example/:id/image.
-
-Давайте начнем со вспомогательных файлов.
+Давайте опишем каждый файл, кода будет относительно немного. И добавим загрузку и удаление в отдельный ednpoint работы с изображениями через api/example/:id/image. Начнем со вспомогательных файлов.
 
 ```
 // default.bucket.ts
@@ -1035,9 +1029,7 @@ export const StorageBucketsProvider = 'StorageBucketsProvider'
 export const StorageOptionsProvider = 'StorageOptionsProvider'
 
 export const StorageBucketProviders: string[] = [DefaultBucketProvider.bucketName]
-```
 
-```
 // bucket.types.ts
 import { Bucket, Storage } from '@google-cloud/storage'
 
@@ -1057,7 +1049,7 @@ export type BucketProvider = {
 }
 ```
 
-Наш файл для работы с Bucket.
+Наш сервис для работы с Bucket.
 ```
 // bucket.shared.service.ts
 import { Bucket } from '@google-cloud/storage'
@@ -1265,8 +1257,10 @@ export const storage = diskStorage({
 })
 ```
 
+Константа ```storage``` понадобится нам, чтобы не перегружать memory при работе с загружаемым изображением. Если не использовать diskStorage, то мы можем столкнуться с нехваткой оперативной памяти при росте трафика.
+
 ```
-// index.ts
+// index.ts - для коротких импортов
 export * from './bucket.module'
 export * from './bucket.shared.service'
 export * from './bucket.types'
@@ -1296,7 +1290,7 @@ export * from './utils'
 export class AppModule {}
 ```
 
-Еще, мы добавим helper для валидации файлов. В нем мы опишем разрешенные расширения файлов и размеры.
+Добавим helper для валидации файлов. В нем мы опишем разрешенные расширения файлов и размеры.
 
 ```
 - helpers
@@ -1318,9 +1312,7 @@ export const IMG_MAX_SIZE_IN_BYTE = 716800 // 700kb
 export const IMG_MAX_1MB_SIZE_IN_BYTE = 1048576 // 1mb
 
 export const IMG_MAX_5MB_SIZE_IN_BYTE = 1048576 * 5 // 1mb
-```
 
-```
 // utils.ts
 import { reduce } from 'lodash'
 
@@ -1330,7 +1322,7 @@ export const getFileTypesRegexp = (ext: string): string => reduce(ext.split(',')
 Теперь займемся контроллером и методом работы с изображением, по пути, добавим новый параметр в example.document.ts и example.repository.ts, детальные изменения можно будет посмотреть в коммите, в конце этой части.
 
 ```
-// example.controller.ts
+// example/controllers/example.controller.ts
 ...
 
 @Post('/:id/image')
@@ -1353,7 +1345,7 @@ async updateExampleImage(
 ```
 
 ```
-// example.service.ts
+// example/services/example.service.ts
 ...
 export class ExampleService {
   private bucketService: BucketSharedService
@@ -1414,9 +1406,9 @@ export class ExampleService {
 Можно заметить, что в модель добавилось поле imageUrl с установленной ссылкой из GCloud Storage. Полный набор изменений можно найти в [этом коммите](https://github.com/Fedorrychkov/nestjs-startup-boilerplate/commit/e0e0f789b9459a55729dde26a7a06f3dbe1cd513).
 
 # Заключение
-Надеюсь, что в данной статьей мы достигли намеченной цели, описать минимальный конфиг проекта с примером структуры кода, работы с Firestore и GCloud Bucket. Полный пример nestjs проекта можно найти у меня в [GitHub](https://github.com/Fedorrychkov/nestjs-startup-boilerplate). Надеюсь что я смог доступно и с достаточным количеством кода описать основные шаги по генерации CRUD приложения. Я бы не хотел останавливаться на этой статье. Буду рад получить обратную связь и критику. Итоговая репа, может послужить не самым плохим примером для Вашего быстрого старта разработки MVP или пет проекта на Nest.js в связке с Firebase или любым другим PaaS решением.
+Надеюсь, что в данной статьей мы достигли намеченной цели, описать минимальный конфиг проекта с примером структуры кода, работы с Firestore и GCloud Bucket. Полный пример nestjs проекта можно найти у меня на [GitHub](https://github.com/Fedorrychkov/nestjs-firebase-startup-boilerplate). Надеюсь, что я смог доступно и с достаточным количеством кода описать основные шаги по генерации CRUD приложения. Я бы не хотел останавливаться на этой статье. Буду рад получить обратную связь и критику. Итоговая репа может послужить не самым плохим примером для Вашего быстрого старта разработки MVP или пет проекта на Nest.js в связке с Firebase или любым другим PaaS решением.
 
-В следующих статьях вернемся к этому бойлерплейту и попробуем сделать больше:
+В следующих статьях мы вернемся к этому бойлерплейту и попробуем сделать больше:
 - Реализуем методы работы с авторизацией и аутентификацией в Firebase в Nest.js API (На базе этой статьи и текущего example проекта).
 - Добавим Swagger, для удобного просмотра контрактов и тестирования API.
 - Немного разберем деплой получившегося backend приложения и настроим нотификации в командный чат Telegram.
