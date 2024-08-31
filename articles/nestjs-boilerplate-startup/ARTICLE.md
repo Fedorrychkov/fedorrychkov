@@ -2,4 +2,4 @@
 
 Available languages:
 - [RU](./ARTICLE_RU.md)
-- EN *Soon...*
+- [EN](ARTICLE_EN.md)

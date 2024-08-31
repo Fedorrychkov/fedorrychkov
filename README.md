@@ -32,7 +32,7 @@ I am a Full Stack Developer <img src="https://media.giphy.com/media/WUlplcMpOCEm
 - Nest.js Mini-App for Tg Bot (maybeeee...)
 - Nest.js Backend for Telegram Bot (sooooOon...)
 - Nest.js Firebase Auth API (soon...)
-- [2024 Nest.js Boilerplate with Firebase and GCloud with CRUD Example (Currently available in RU lang only)](./articles/nestjs-boilerplate-startup/ARTICLE_RU.md)
+- [2024 Nest.js Boilerplate with Firebase and GCloud with CRUD Example (Currently available in RU lang only)](./articles/nestjs-boilerplate-startup/ARTICLE_EN.md)
   - [VC.ru](https://vc.ru/dev/1353099-nestjs-firebase-gcloud-kak-bystro-podnyat-api-backend-na-typescript)
   - [Habr.ru](https://habr.com/ru/articles/835124/)
 - [2021 React.js — формошлепство или работа с формами при помощи пользовательских хуков](https://habr.com/ru/articles/523256/)
