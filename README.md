@@ -33,8 +33,9 @@ I am a Full Stack Developer <img src="https://media.giphy.com/media/WUlplcMpOCEm
 - Nest.js Backend for Telegram Bot (sooooOon...)
 - Nest.js Firebase Auth API (soon...)
 - [2024 Nest.js Boilerplate with Firebase and GCloud with CRUD Example (Currently available in RU lang only)](./articles/nestjs-boilerplate-startup/ARTICLE_EN.md)
-  - [VC.ru](https://vc.ru/dev/1353099-nestjs-firebase-gcloud-kak-bystro-podnyat-api-backend-na-typescript)
-  - [Habr.ru](https://habr.com/ru/articles/835124/)
+  - [VC.ru](https://vc.ru/dev/1353099-nestjs-firebase-gcloud-kak-bystro-podnyat-api-backend-na-typescript) - RUS
+  - [Habr.ru](https://habr.com/ru/articles/835124/) - RUS
+  - [Dev.to](https://dev.to/stonedcatt/nestjs-firebase-gcloud-how-to-quickly-set-up-an-api-backend-in-typescript-9no) - ENG
 - [2021 React.js — формошлепство или работа с формами при помощи пользовательских хуков](https://habr.com/ru/articles/523256/)
 - [2021 SEO-friendly HTML для верстальщика
 ](https://habr.com/ru/articles/538892/)

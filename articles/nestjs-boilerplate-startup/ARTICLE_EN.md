@@ -2,6 +2,22 @@
 
 ![Main preview](./images/BoilerplatePreview.png?raw=true "Main preview")
 
+## Table of Contents
+- [Nuances of working with Firebase](#nuances-of-working-with-firebase)
+- [Personal Experience](#personal-experience)
+- [Before Initialization](#before-initialization)
+- [My Setup](#my-setup)
+- [Configuration](#configuration)
+- [Env files](#env-files)
+- [Preparing to work with Firebase](#preparing-to-work-with-firebase)
+- [Project configuration for Connecting to Firebase](#project-configuration-for-connecting-to-firebase)
+- [Firestore Module](#firestore-module)
+- [Example Module](#example-module)
+- [Husky](#husky)
+- [Testing and building indexes for api/example](#testing-and-building-indexes-for-apiexample)
+- [Firebase Storage](#firebase-storage)
+- [Conclusion](#conclusion)
+
 It's great that you decided to open this article. My name is Fedor, and I've been a full-stack developer on a permanent basis since the end of 2021. Just in case, here is my [github profile](https://github.com/Fedorrychkov/Fedorrychkov). In this brief article, I want to:
 - Kickstart a small series of tutorials on setting up a backend API
 - Provide an example of a NestJS project integrated with Firebase
@@ -845,7 +861,7 @@ This setup ensures that only the staged files are linted before committing, whic
 
 As a result, we will end up with [this commit](https://github.com/Fedorrychkov/nestjs-startup-boilerplate/commit/534ed4df51f77229ae7b93b35c45dee507be743e). From now on, all future commits will be validated for JavaScript/TypeScript files using ESLint/Prettier, and fixes will be applied for future commits using the previously added command ```lint:fix```. You can consider this pre-commit hook example as a foundation for your personal configurations. You can view the full list of available Git hooks in [githooks](https://git-scm.com/docs/githooks).
 
-## Test and Build Indexes for api/example
+## Testing and building indexes for api/example
 
 The `app.module` already includes an example working controller in `app.controller.ts`, which can be accessed by sending a request to `http://localhost:8080` from a browser or Postman. I will use Postman for a more convenient demonstration.
 
@@ -991,7 +1007,7 @@ I'm also attaching a link to the current set of API calls in Postman [json file]
 
 Another [commit](https://github.com/Fedorrychkov/nestjs-startup-boilerplate/commit/81e8040835da547f5f6a2367f51f5104f1ee64f4) with changes. At this point, I could stop, but we haven't yet covered the aspect of publishing files to GCloud Storage...
 
-## Storage Bucket
+## Firebase Storage
 
 Let's define in advance the aspects of working with Storage that I'm aware of.
 - Nest.js provides [documentation on file uploading](https://docs-nestjs.netlify.app/techniques/file-upload)
