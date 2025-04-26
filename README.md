@@ -29,6 +29,9 @@ I am a Full Stack Developer <img src="https://media.giphy.com/media/WUlplcMpOCEm
 
 ### 🤔 Tech Articles
 
+- [2025 Как я делал свой телеграм бот с функциями обработки изображений (AI) (Ghibli/Pixar и другие))](./articles/bot-with-ai-features/ARTICLE_RU.md)
+  - [VC.ru]() - RUS
+  - [DZEN.ru]() - RUS
 - Nest.js Mini-App for Tg Bot (maybeeee...)
 - Nest.js Backend for Telegram Bot (sooooOon...)
 - Nest.js Firebase Auth API (soon...)
