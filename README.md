@@ -29,6 +29,10 @@ I am a Full Stack Developer <img src="https://media.giphy.com/media/WUlplcMpOCEm
 
 ### 🤔 Tech Articles
 
+- [2026 Готовый Nextjs шаблон для старта с универсальной конфигурацией](./articles/standalone-nextjs-production-ready-boilerplate/ARTICLE_RU.md)
+  - [RU](./articles/standalone-nextjs-production-ready-boilerplate/ARTICLE_RU.md)
+  - [EN](./articles/standalone-nextjs-production-ready-boilerplate/ARTICLE_EN.md)
+
 - [2025 Как я делал свой телеграм бот с функциями обработки изображений (AI) (Ghibli/Pixar и другие))](./articles/bot-with-ai-features/ARTICLE_RU.md)
   - [VC.ru](https://vc.ru/id588157/1950417-sozdanie-telegram-bota-dlya-obrabotki-izobrazheniy-s-ai-v-stile-ghibli) - RUS
   - [DZEN.ru](https://dzen.ru/a/aA0yOoUBq125A36q) - RUS
