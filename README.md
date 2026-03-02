@@ -50,6 +50,10 @@ I am a Full Stack Developer <img src="https://media.giphy.com/media/WUlplcMpOCEm
 
 ### Projects
 - [2024 Nest.js Jira Cloud and Github util for team working](https://github.com/Fedorrychkov/nestjs-tg-jira-bot)
+  - [Habr RU](https://habr.com/ru/articles/1005690/)
+  - [Medium EN](https://medium.com/@fedorrychkov/minimal-production-ready-template-for-a-next-js-app-23db425d69e4)
+  - [Dev.to EN](https://dev.to/stonedcatt/minimal-production-ready-template-for-a-nextjs-app-3hn)
+  - [X](https://x.com/fedorrychkov/status/2028487840284184926?s=46&t=HIFksIOt7HKmOM1YZJhJ3Q) and [Threads](https://www.threads.com/@stonedcatt/post/DVYv-RxCELs?xmt=AQF0UVU9KE3nIKpuC66w8By5FbUiMc5cEvdDtrrmn9AlDubOWpTLDBRhLI8_PMjdIq0ISUc&slof=1) (EN)
 - [2024 Nest.js boilerplate with Firebase, Storage nad CRUD Example](https://github.com/Fedorrychkov/nestjs-startup-boilerplate)
 - 2024 Personal Wish List (Telegram **Production** pet project)
   - [API](https://github.com/Fedorrychkov/personal-wish-list-bot)
